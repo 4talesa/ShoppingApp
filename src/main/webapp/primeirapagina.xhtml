@@ -15,16 +15,16 @@
 		<h1>Testar Formulário</h1>
 		
 		<br />
-		<h2>Nome:</h2>
+		<h:outputLabel value="Nome" for="campoNome" />
 		<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
 		
 		<br />
-		<h2>Sobrenome:</h2>
+		<h:outputLabel value="Sobrenome" for="campoSobreNome" />
 		<h:inputText id="campoSobreNome" value="#{pessoaBean.sobrenome}" />
 		
 		<br />
-		<h2>Nome Completo:</h2>
-		<h:outputText value="#{pessoaBean.nomeCompleto}" />
+		<h:outputLabel value="Nome Completo" for="campoNomeCompleto" />
+		<h:outputText value="#{pessoaBean.nomeCompleto}" id="campoNomeCompleto" />
 		
 		<br />
 		<h:commandButton action="#{pessoaBean.montarNomeCompleto}" value="Botão" />
