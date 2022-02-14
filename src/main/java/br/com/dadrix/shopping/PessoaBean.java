@@ -1,41 +1,26 @@
 package br.com.dadrix.shopping;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
+import br.com.dadrix.dao.DaoGeneric;
+import br.com.dadrix.entidades.Pessoa;
+
+@ViewScoped
 @ManagedBean(name = "pessoaBean")
 public class PessoaBean {
 
-	private String nome;
-	private String sobrenome;
-	private String nomeCompleto;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNomeCompleto() {
-		return nomeCompleto;
-	}
-
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
-	}
-
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public String montarNomeCompleto() {
-		this.nomeCompleto = this.nome + " " + this.sobrenome;
+	private Pessoa pessoa = new Pessoa();
+	private DaoGeneric<Pessoa> daoPessoa = new DaoGeneric<Pessoa>();
+	
+	public String salvar() {
+		daoPessoa.salvar(pessoa);
+		
 		return "";
+	}
+	
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
 }

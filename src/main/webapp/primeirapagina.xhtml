@@ -16,18 +16,18 @@
 		
 		<br />
 		<h:outputLabel value="Nome" for="campoNome" />
-		<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
+		<h:inputText id="campoNome" value="#{pessoaBean.pessoa.nome}" />
 		
 		<br />
 		<h:outputLabel value="Sobrenome" for="campoSobreNome" />
-		<h:inputText id="campoSobreNome" value="#{pessoaBean.sobrenome}" />
+		<h:inputText id="campoSobreNome" value="#{pessoaBean.pessoa.sobrenome}" />
 		
 		<br />
-		<h:outputLabel value="Nome Completo" for="campoNomeCompleto" />
-		<h:outputText value="#{pessoaBean.nomeCompleto}" id="campoNomeCompleto" />
+		<h:outputLabel value="Idade" for="campoIdade" />
+		<h:inputText id="campoIdade" value="#{pessoaBean.pessoa.idade}" />
 		
 		<br />
-		<h:commandButton action="#{pessoaBean.montarNomeCompleto}" value="Botão" />
+		<h:commandButton action="#{pessoaBean.salvar}" value="Salvar" />
 	
 	</h:form>
 	
