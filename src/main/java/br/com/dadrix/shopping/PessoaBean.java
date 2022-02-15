@@ -1,5 +1,9 @@
 package br.com.dadrix.shopping;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -12,9 +16,11 @@ public class PessoaBean {
 
 	private Pessoa pessoa = new Pessoa();
 	private DaoGeneric<Pessoa> daoPessoa = new DaoGeneric<Pessoa>();
+	private List<Pessoa> pessoas = new ArrayList<Pessoa>();
 	
 	public String salvar() {
 		pessoa = daoPessoa.merge(pessoa);
+		carregarPessoas();
 		
 		return "";
 	}
@@ -28,12 +34,22 @@ public class PessoaBean {
 	public String remove() {
 		daoPessoa.deletePorId(pessoa);
 		pessoa = new Pessoa();
+		carregarPessoas();
 		
 		return "";
 	}
 	
 	public Pessoa getPessoa() {
 		return pessoa;
+	}
+	
+	@PostConstruct
+	public void carregarPessoas() {
+		pessoas = daoPessoa.getListEntity(Pessoa.class);
+	}
+	
+	public List<Pessoa> getPessoas(){
+		return pessoas;
 	}
 
 }
