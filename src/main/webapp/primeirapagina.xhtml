@@ -15,6 +15,10 @@
 		<h1>Testar Formulário</h1>
 		
 		<br />
+		<h:outputLabel value="Id" for="campoId" />
+		<h:outputText id="campoId" value="#{pessoaBean.pessoa.id}" />
+		
+		<br />
 		<h:outputLabel value="Nome" for="campoNome" />
 		<h:inputText id="campoNome" value="#{pessoaBean.pessoa.nome}" />
 		
@@ -28,6 +32,7 @@
 		
 		<br />
 		<h:commandButton action="#{pessoaBean.salvar}" value="Salvar" />
+		<h:commandButton action="#{pessoaBean.novo}" value="Novo" />
 	
 	</h:form>
 	
