@@ -43,6 +43,10 @@ public class PessoaBean {
 		return pessoa;
 	}
 	
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	
 	@PostConstruct
 	public void carregarPessoas() {
 		pessoas = daoPessoa.getListEntity(Pessoa.class);

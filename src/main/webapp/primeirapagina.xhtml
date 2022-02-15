@@ -49,6 +49,12 @@
 				<h:outputText value="#{p.sobrenome}"/>
 			</h:column>
 			
+			<h:column>
+				<h:commandLink value="Editar">
+					<f:setPropertyActionListener value="#{p}" target="#{pessoaBean.pessoa}" />
+				</h:commandLink>
+			</h:column>
+			
 		</h:dataTable>
 	
 	</h:form>
